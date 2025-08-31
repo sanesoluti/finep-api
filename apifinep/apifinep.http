@@ -1,6 +1,43 @@
 @apifinep_HostAddress = http://localhost:5073
+@token = 
 
-GET {{apifinep_HostAddress}}/weatherforecast/
+### Registrar novo usuário
+POST {{apifinep_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "admin@finep.com",
+  "fullName": "Administrator",
+  "password": "123456",
+  "role": "Admin"
+}
+
+### Login
+POST {{apifinep_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+### Validar token
+GET {{apifinep_HostAddress}}/api/auth/validate
+Authorization: Bearer {{token}}
+
+### Obter perfil do usuário
+GET {{apifinep_HostAddress}}/api/auth/profile
+Authorization: Bearer {{token}}
+
+### Dashboard Summary (protegido)
+GET {{apifinep_HostAddress}}/api/dashboard/summary
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Dashboard Summary com filtros (protegido)
+GET {{apifinep_HostAddress}}/api/dashboard/summary?description=sensor&lastReadingInicio=2024-01-01&lastReadingFim=2024-12-31
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###

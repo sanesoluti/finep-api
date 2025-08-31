@@ -131,3 +131,12 @@ D:\Repositório\Sanesoluti\finep-api\apifinep\obj\Debug\net9.0\refint\apifinep.d
 D:\Repositório\Sanesoluti\finep-api\apifinep\obj\Debug\net9.0\apifinep.pdb
 D:\Repositório\Sanesoluti\finep-api\apifinep\obj\Debug\net9.0\apifinep.genruntimeconfig.cache
 D:\Repositório\Sanesoluti\finep-api\apifinep\obj\Debug\net9.0\ref\apifinep.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Repositório\Sanesoluti\finep-api\apifinep\obj\Debug\net9.0\apifinep.sourcelink.json

@@ -11,6 +11,7 @@ namespace apifinep.Data
         }
 
         public DbSet<DeviceStatistics> DeviceStatistics { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
