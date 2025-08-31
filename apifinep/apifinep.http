@@ -1,0 +1,6 @@
+@apifinep_HostAddress = http://localhost:5073
+
+GET {{apifinep_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
