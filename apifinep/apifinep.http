@@ -40,4 +40,32 @@ GET {{apifinep_HostAddress}}/api/dashboard/summary?description=sensor&lastReadin
 Authorization: Bearer {{token}}
 Accept: application/json
 
+### Device Statistics - All devices (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/statistics
+Authorization: Bearer {{token}}
+
+### Device Statistics with description filter (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/statistics?description=sensor
+Authorization: Bearer {{token}}
+
+### Device Statistics with date range filter (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/statistics?lastReadingInicio=2024-01-01&lastReadingFim=2024-12-31
+Authorization: Bearer {{token}}
+
+### Device Statistics with all filters (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/statistics?description=sensor&lastReadingInicio=2024-01-01&lastReadingFim=2024-12-31
+Authorization: Bearer {{token}}
+
+### Device Readings 24h - Flow (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/readings-24h?deviceId=1&reading=flow
+Authorization: Bearer {{token}}
+
+### Device Readings 24h - Volume (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/readings-24h?deviceId=1&reading=volume
+Authorization: Bearer {{token}}
+
+### Device Readings 24h - Different Device (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/dashboard/devices/readings-24h?deviceId=5&reading=flow
+Authorization: Bearer {{token}}
+
 ###
