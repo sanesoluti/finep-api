@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using apifinep.Data;
 using apifinep.DTOs;
@@ -73,5 +73,57 @@ namespace apifinep.Controllers
                 return StatusCode(500, new { message = "Erro interno do servidor", details = ex.Message });
             }
         }
-    }
+        
+        /// <summary>
+        /// Obter peaks dos dispositivos/equipamentos de medição
+        /// </summary>
+        /// <param name="serial">Serial do dispositivo (obrigatório)</param>
+        /// <param name="factory">Factory (0 ou 1) (obrigatório)</param>
+        /// <param name="type">Tipo (DNS ou UPS) (obrigatório)</param>
+        /// <returns>Lista de peaks com sequence e value</returns>
+        [HttpGet("peaks")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<PeakDto>>> GetPeaks(
+            [FromQuery] string serial,
+            [FromQuery] int factory,
+            [FromQuery] string type)
+        {
+            // Validate required parameters
+            if (string.IsNullOrEmpty(serial))
+            {
+                return BadRequest("Serial parameter is required");
+            }
+
+            if (factory != 0 && factory != 1)
+            {
+                return BadRequest("Factory parameter must be 0 or 1");
+            }
+
+            if (string.IsNullOrEmpty(type) || (type != "DNS" && type != "UPS"))
+            {
+                return BadRequest("Type parameter must be 'DNS' or 'UPS'");
+            }
+
+            try
+            {
+                var peaks = await _context.Peaks
+                    .Include(p => p.PeakDevice)
+                    .Where(p => p.PeakDevice.Serial == serial && p.Factory == factory && p.Type == type)
+                    .Select(p => new PeakDto
+                    {
+                        Sequence = p.Sequence,
+                        Value = p.Value
+                    })
+                    .ToListAsync();
+
+                return Ok(peaks);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        
+
+     }
 }

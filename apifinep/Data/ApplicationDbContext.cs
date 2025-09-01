@@ -15,6 +15,8 @@ namespace apifinep.Data
         public DbSet<Readings24h> Readings24h { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Peak> Peaks { get; set; }
+        public DbSet<PeakDevice> PeakDevices { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +34,13 @@ namespace apifinep.Data
             modelBuilder.Entity<Readings24h>()
                 .ToView("vw_readings_24h")
                 .HasNoKey();
+                
+            // Configure PeakDevice and Peak relationship
+            modelBuilder.Entity<Peak>()
+                .HasOne(p => p.PeakDevice)
+                .WithMany(pd => pd.Peaks)
+                .HasForeignKey(p => p.PeaksDevicesId)
+                .HasPrincipalKey(pd => pd.Id);
         }
     }
 }

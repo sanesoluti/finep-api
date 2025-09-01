@@ -80,4 +80,20 @@ Authorization: Bearer {{token}}
 GET {{apifinep_HostAddress}}/api/devices/999
 Authorization: Bearer {{token}}
 
+### Get device peaks - DNS type (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/peaks?serial=ABC123&factory=0&type=DNS
+Authorization: Bearer {{token}}
+
+### Get device peaks - UPS type (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/peaks?serial=XYZ789&factory=1&type=UPS
+Authorization: Bearer {{token}}
+
+### Get device peaks - Invalid factory (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/peaks?serial=ABC123&factory=2&type=DNS
+Authorization: Bearer {{token}}
+
+### Get device peaks - Invalid type (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/peaks?serial=ABC123&factory=0&type=INVALID
+Authorization: Bearer {{token}}
+
 ###

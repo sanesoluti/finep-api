@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apifinep")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc938154bc469dd928a3f354d0adfec34ae5d69d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dcb7945cff191bcf666a310863d143dff2366a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("apifinep")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apifinep")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
