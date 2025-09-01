@@ -68,4 +68,16 @@ Authorization: Bearer {{token}}
 GET {{apifinep_HostAddress}}/api/dashboard/devices/readings-24h?deviceId=5&reading=flow
 Authorization: Bearer {{token}}
 
+### Get specific device by ID (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/1
+Authorization: Bearer {{token}}
+
+### Get another device by ID (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/5
+Authorization: Bearer {{token}}
+
+### Get device with invalid ID (Protected - requires JWT token)
+GET {{apifinep_HostAddress}}/api/devices/999
+Authorization: Bearer {{token}}
+
 ###

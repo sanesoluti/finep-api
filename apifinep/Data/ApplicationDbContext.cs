@@ -13,6 +13,7 @@ namespace apifinep.Data
         public DbSet<DeviceStatistics> DeviceStatistics { get; set; }
         public DbSet<LatestReading> LatestReadings { get; set; }
         public DbSet<Readings24h> Readings24h { get; set; }
+        public DbSet<Device> Devices { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
