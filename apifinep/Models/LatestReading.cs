@@ -23,5 +23,23 @@ namespace apifinep.Models
         
         [Column("volume")]
         public decimal Volume { get; set; }
+
+        [Column("pressure")]
+        public decimal Pressure { get; set; }
+
+        [Column("vibration")]
+        public decimal Vibration { get; set; }
+
+        [Column("flow_unit")]
+        public string Flow_Unit { get; set; } = string.Empty;
+        
+        [Column("volume_unit")]
+        public string Volume_Unit { get; set; } = string.Empty;    
+
+        [Column("pressure_unit")]
+        public string Pressure_Unit { get; set; } = string.Empty;
+
+        [Column("vibration_unit")]
+        public string Vibration_Unit { get; set; } = string.Empty;
     }
 }

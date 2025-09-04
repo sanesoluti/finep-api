@@ -80,7 +80,13 @@ namespace apifinep.Services
                 Description = d.Description,
                 Timestamp = d.Timestamp,
                 Flow = d.Flow,
-                Volume = d.Volume
+                Volume = d.Volume,
+                Pressure = d.Pressure,
+                Vibration = d.Vibration,
+                Flow_Unit = d.Flow_Unit,
+                Volume_Unit = d.Volume_Unit,
+                Pressure_Unit = d.Pressure_Unit,
+                Vibration_Unit = d.Vibration_Unit
             }).ToList();
         }
 

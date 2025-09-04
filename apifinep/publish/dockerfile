@@ -1,0 +1,11 @@
+# Use a imagem oficial do .NET Runtime para rodar a aplicação
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+
+# Defina o diretório de trabalho
+WORKDIR /api-finep
+
+# Copie o resto dos arquivos da sua aplicação
+COPY . .
+
+# Ponto de entrada (substitua pelo nome da sua DLL)
+ENTRYPOINT ["dotnet", "apifinep.dll"]
